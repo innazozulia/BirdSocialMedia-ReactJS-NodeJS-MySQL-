@@ -1,0 +1,78 @@
+.register{
+    height: 100vh;
+    background-color: #bbbef2 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card{
+        width: 50%;
+        min-height: 600px;
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .left{
+         flex:1;
+         background: linear-gradient(rgba(39,11,96, 0.5,) , rgba(39,11,96,0.5)), url("https://cdn.pixabay.com/photo/2022/10/28/18/53/bird-7553736_1280.jpg") center;
+         background-size: cover;
+         padding: 50px;
+         display: flex;
+         flex-direction: column;
+         gap:30px;
+         color: white;
+            h1{
+                font-size: 100px;
+                line-height: 100px;
+            }
+            // p{}
+            span{
+                font-size: 14px;
+            }
+            button{
+                width:50% ;
+                padding: 10px;
+                background-color: white;
+                border: none;
+                color: #2c37f6;
+                cursor: pointer;
+                font-weight: 600;
+                 border-radius: 5px;
+            }
+        }
+        .right{
+               flex:1;
+               padding: 50px;
+               display: flex;
+               flex-direction: column;
+               gap: 50px;
+               justify-content: center;
+            h1{
+                color: #ccc;
+             }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap:30px;
+                input{
+                    border: none;
+                    border-bottom: 1px solid #ccc;
+                    padding: 20px 10px;
+                }
+                button{
+                    width: 50%;
+                    border: none;
+                    padding: 10px;
+                    cursor: pointer;
+                    background: #bbbef2;
+                    color: white;
+                    border-radius: 5px;
+                    font-weight: 600;
+
+                }
+            }
+        }
+    }
+}
