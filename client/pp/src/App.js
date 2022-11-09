@@ -1,33 +1,46 @@
-import "./App.css";
+import React from "react";
+
 import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
   Navigate,
 } from "react-router-dom";
+
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register";
-// import Navbar from "./components/navbar/Navbar";
 import Navbar from "./components/navBar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
+import { DarkModeContext } from "./context/darkModeContext.js";
+import { AuthContext } from "./context/authContext.js";
+
+import "./style.scss";
 
 function App() {
-  // const currentUser = false;
-  const currentUser = true;
+  const { currentUser } = React.useContext(AuthContext);
+
+  const { darkMode } = React.useContext(DarkModeContext);
 
   const Layout = () => {
     return (
-      <div>
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <Navbar />
-        <div style={{ display: "flex" }}>
+        <div
+          style={{
+            display: "flex",
+          }}
+        >
           <LeftBar />
-          <div style={{ flex: 6 }}>
+          <div
+            style={{
+              flex: 6,
+            }}
+          >
             <Outlet />
           </div>
-
           <RightBar />
         </div>
       </div>
@@ -38,8 +51,10 @@ function App() {
     if (!currentUser) {
       return <Navigate to="/login" />;
     }
+
     return children;
   };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -53,16 +68,19 @@ function App() {
           path: "/",
           element: <Home />,
         },
+
         {
           path: "/profile/:id",
           element: <Profile />,
         },
       ],
     },
+
     {
       path: "/login",
       element: <Login />,
     },
+
     {
       path: "/register",
       element: <Register />,
@@ -75,4 +93,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

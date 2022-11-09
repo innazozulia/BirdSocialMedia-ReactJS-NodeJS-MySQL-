@@ -11,40 +11,39 @@ import Message from "../../assets/message.png";
 import Tutorials from "../../assets/tutorials.png";
 import Courses from "../../assets/course.png";
 import Donate from "../../assets/donate.png";
+import { AuthContext } from "../../context/authContext";
 
 import "./leftbar.scss";
 
 const LeftBar = () => {
+  const { currentUser } = React.useContext(AuthContext);
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
           <div className="user">
-            <img
-              src="https://images.unsplash.com/photo-1665686304355-0b09b1e3b03c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-              alt="user photo"
-            />
-            <span>Emma Murphy</span>
+            <img src={currentUser.profilePicture} alt="user" />
+            <span>{currentUser.name}</span>
           </div>
 
           <div className="item">
-            <img src={Frineds} alt="friends" />
-            <span>Friends</span>
-          </div>
-          <div className="item">
-            <img src={Groups} alt="friends" />
+            <img src={Frineds} alt="Groups" />
             <span>Groups</span>
           </div>
           <div className="item">
-            <img src={Market} alt="friends" />
+            <img src={Groups} alt="Groups" />
+            <span>Groups</span>
+          </div>
+          <div className="item">
+            <img src={Market} alt="Marketplace" />
             <span>Marketplace</span>
           </div>
           <div className="item">
-            <img src={Watch} alt="friends" />
+            <img src={Watch} alt="Watch" />
             <span>Watch</span>
           </div>
           <div className="item">
-            <img src={Memories} alt="friends" />
+            <img src={Memories} alt="Memories" />
             <span>Memories</span>
           </div>
         </div>
@@ -52,23 +51,23 @@ const LeftBar = () => {
         <div className="menu">
           <span>Your shortcuts</span>
           <div className="item">
-            <img src={Events} alt="friends" />
+            <img src={Events} alt="Events" />
             <span>Events</span>
           </div>
           <div className="item">
-            <img src={Gaming} alt="friends" />
+            <img src={Gaming} alt="Gaming" />
             <span>Gaming</span>
           </div>
           <div className="item">
-            <img src={Gallery} alt="friends" />
+            <img src={Gallery} alt="Gallery" />
             <span>Gallery</span>
           </div>
           <div className="item">
-            <img src={Watch} alt="friends" />
+            <img src={Watch} alt="Watch" />
             <span>Watch</span>
           </div>
           <div className="item">
-            <img src={Message} alt="friends" />
+            <img src={Message} alt="Message" />
             <span>Message</span>
           </div>
         </div>
@@ -76,15 +75,15 @@ const LeftBar = () => {
         <div className="menu">
           <span>Other</span>
           <div className="item">
-            <img src={Donate} alt="friends" />
+            <img src={Donate} alt="Donate" />
             <span>Donate</span>
           </div>
           <div className="item">
-            <img src={Tutorials} alt="friends" />
+            <img src={Tutorials} alt="Tutorials" />
             <span>Tutorials</span>
           </div>
           <div className="item">
-            <img src={Courses} alt="friends" />
+            <img src={Courses} alt="Courses" />
             <span>Courses</span>
           </div>
         </div>
