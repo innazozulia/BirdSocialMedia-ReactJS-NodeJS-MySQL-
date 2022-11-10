@@ -1,6 +1,6 @@
-const getUser = (req, res) => {
-  //todo
-  re;
-};
+// const getUser = (req, res) => {
+//   //todo
+//   re;
+// };
 
-module.exports = getUser;
+// module.exports = getUser;

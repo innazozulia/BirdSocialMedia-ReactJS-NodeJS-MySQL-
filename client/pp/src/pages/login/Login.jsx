@@ -5,10 +5,26 @@ import { AuthContext } from "../../context/authContext";
 import "./login.scss";
 
 const Login = () => {
+  const [inputs, setInputs] = React.useState({
+    username: "",
+    password: "",
+  });
+
+  const [error, setError] = React.useState(null);
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   const { login } = React.useContext(AuthContext);
 
-  const handleLogin = () => {
-    login();
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await login(inputs);
+    } catch (error) {
+      setError(error.response.data);
+    }
   };
 
   return (
@@ -29,8 +45,19 @@ const Login = () => {
         <div className="right">
           <h1>Login</h1>
           <form>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={handleChange}
+            />
+            {error && error}
             <button onClick={handleLogin}>Login</button>
           </form>
         </div>
