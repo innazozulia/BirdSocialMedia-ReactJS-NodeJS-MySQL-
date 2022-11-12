@@ -1,12 +1,11 @@
 import React from "react";
-
 import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
   Navigate,
 } from "react-router-dom";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register";
 import Navbar from "./components/navBar/Navbar";
@@ -24,26 +23,28 @@ function App() {
 
   const { darkMode } = React.useContext(DarkModeContext);
 
+  const queryClient = new QueryClient();
+
   const Layout = () => {
     return (
-      <div className={`theme-${darkMode ? "dark" : "light"}`}>
-        <Navbar />
-        <div
-          style={{
-            display: "flex",
-          }}
-        >
-          <LeftBar />
+      <QueryClientProvider client={queryClient}>
+        <div className={`theme-${darkMode ? "dark" : "light"}`}>
+          <Navbar />
           <div
             style={{
-              flex: 6,
-            }}
-          >
-            <Outlet />
+              display: "flex",
+            }}>
+            <LeftBar />
+            <div
+              style={{
+                flex: 6,
+              }}>
+              <Outlet />
+            </div>
+            <RightBar />
           </div>
-          <RightBar />
         </div>
-      </div>
+      </QueryClientProvider>
     );
   };
 

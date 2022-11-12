@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/users");
@@ -8,9 +7,22 @@ const likeRoutes = require("./routes/likes");
 const commentRoutes = require("./routes/comments");
 const authRoutes = require("./routes/auth");
 
+const app = express();
+
 //middleware
+//cors
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", true);
+
+  next();
+});
+
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  }),
+);
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
