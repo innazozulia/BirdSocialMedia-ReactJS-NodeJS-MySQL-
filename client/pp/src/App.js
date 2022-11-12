@@ -5,7 +5,7 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register";
 import Navbar from "./components/navBar/Navbar";
@@ -15,6 +15,7 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import { DarkModeContext } from "./context/darkModeContext.js";
 import { AuthContext } from "./context/authContext.js";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./style.scss";
 
