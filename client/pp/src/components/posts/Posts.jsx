@@ -5,12 +5,12 @@ import { makeRequest } from "../../axios";
 
 import "./posts.scss";
 
-const Posts = () => {
-  const { isLoading, error, data } = useQuery(["posts"], () => {
+const Posts = ({ userId }) => {
+  const { isLoading, error, data } = useQuery(["posts"], () =>
     makeRequest.get("/posts").then((res) => {
       return res.data;
-    });
-  });
+    }),
+  );
   console.log(data);
 
   // // TEMPORARY;
@@ -38,12 +38,16 @@ const Posts = () => {
 
   return (
     <div className="posts">
-      {/* {data.map((post) => (
-        <Post
-          post={post}
-          key={post.id}
-        />
-      ))} */}
+      {error
+        ? "Something went wrong !"
+        : isLoading
+        ? "loading"
+        : data.map((post) => (
+            <Post
+              post={post}
+              key={post.id}
+            />
+          ))}
     </div>
   );
 };
