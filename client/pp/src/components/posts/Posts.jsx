@@ -7,34 +7,10 @@ import "./posts.scss";
 
 const Posts = ({ userId }) => {
   const { isLoading, error, data } = useQuery(["posts"], () =>
-    makeRequest.get("/posts").then((res) => {
+    makeRequest.get("/posts?userId=" + userId).then((res) => {
       return res.data;
     }),
   );
-  console.log(data);
-
-  // // TEMPORARY;
-
-  // const posts = [
-  //   {
-  //     id: 1,
-  //     name: "Emma Murphy",
-  //     userId: 1,
-  //     profilePicture:
-  //       "https://images.unsplash.com/photo-1665686304355-0b09b1e3b03c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-  //     img: "https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  //   },
-
-  //   {
-  //     id: 2,
-  //     name: "Emma Murphy",
-  //     userId: 2,
-  //     profilePicture:
-  //       "https://images.unsplash.com/photo-1665686304355-0b09b1e3b03c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-  //     desc: "Tenetur iste voluptates dolorem rem commodi voluptate pariatur, voluptatum, laboriosam consequatur enim nostrum cumque! Maiores a nam non adipisci minima modi tempore.",
-  //   },
-  // ];
 
   return (
     <div className="posts">

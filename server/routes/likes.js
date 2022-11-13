@@ -1,8 +1,8 @@
-// const express = require("express");
-// const  = require("../controllers/like");
+const express = require("express");
+const getLikes = require("../controllers/like");
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get("", );
+router.get("/", getLikes);
 
-// module.exports = router;
+module.exports = router;
