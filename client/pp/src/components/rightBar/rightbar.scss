@@ -5,10 +5,9 @@
     flex: 3;
     position: sticky;
     // top: 70px;
-    height: calc(100vh - 70px);
+    // height: calc(100vh - 70px);
     overflow: scroll;
     background-color: themed("bgSoft");
-
 
     @include mobile {
       display: none;
@@ -25,8 +24,6 @@
     .container {
       padding: 20px;
       background-color: themed("bg");
-
-
 
       .item {
         -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
@@ -79,7 +76,6 @@
               font-weight: 500;
               color: themed("textColor");
             }
-
           }
 
           .buttons {
@@ -99,13 +95,11 @@
 
               &:last-child {
                 background-color: red;
-                ;
               }
             }
           }
         }
       }
-
     }
   }
 }

@@ -38,6 +38,7 @@ const Post = ({ post }) => {
       },
     },
   );
+
   const deleteMutation = useMutation(
     (postId) => {
       return makeRequest.delete("/posts/" + postId);
@@ -64,7 +65,7 @@ const Post = ({ post }) => {
         <div className="user">
           <div className="user-info">
             <img
-              src={post.profilePicture}
+              src={"/upload/" + post.profilePicture}
               alt=""
             />
             <div className="details">
@@ -78,13 +79,13 @@ const Post = ({ post }) => {
           </div>
           <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
           {menuOpen && post.userId === currentUser.id && (
-            <button onClick={handleDelete}>delete</button>
+            <button onClick={handleDelete}>Delete</button>
           )}
         </div>
         <div className="content">
           <p>{post.desc}</p>
           <img
-            src={"./upload/" + post.img}
+            src={"/upload/" + post.img}
             alt=""
           />
         </div>
@@ -108,7 +109,7 @@ const Post = ({ post }) => {
             className="item"
             onClick={() => setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon />
-            12 Comments
+            See Comments
           </div>
           <div className="item">
             <ShareOutlinedIcon />

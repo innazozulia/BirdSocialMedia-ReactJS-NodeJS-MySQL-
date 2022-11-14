@@ -6,6 +6,7 @@ const userRoutes = require("./routes/users");
 const postRoutes = require("./routes/posts");
 const likeRoutes = require("./routes/likes");
 const commentRoutes = require("./routes/comments");
+const relationshipRoutes = require("./routes/relationships");
 const authRoutes = require("./routes/auth");
 
 const app = express();
@@ -45,10 +46,11 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-// app.use("/api/users", userRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/likes", likeRoutes);
+app.use("/api/relationships", relationshipRoutes);
 
 app.listen(8000, () => {
   console.log("app run on the server");

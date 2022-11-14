@@ -2,13 +2,13 @@ const express = require("express");
 const {
   getComments,
   addComment,
-  //   deleteComment,
+  deleteComment,
 } = require("../controllers/comment");
 
 const router = express.Router();
 
 router.get("/", getComments);
 router.post("/", addComment);
-// router.delete("/:id", deleteComment);
+router.delete("/:id", deleteComment);
 
 module.exports = router;

@@ -18,7 +18,7 @@ const Comments = ({ postId }) => {
 
   const queryClient = useQueryClient(); //tanstack
 
-  // Mutations
+  // Mutations post comment
   const mutation = useMutation(
     (newComment) => {
       return makeRequest.post("/comments", newComment);
@@ -30,6 +30,18 @@ const Comments = ({ postId }) => {
       },
     },
   );
+  //Mutation delete comment
+  // const deleteMutation = useMutation(
+  //   (postId) => {
+  //     return makeRequest.delete("/comments" + postId);
+  //   },
+  //   {
+  //     onSuccess: () => {
+  //       // Invalidate and refetch
+  //       queryClient.invalidateQueries(["comments"]);
+  //     },
+  //   },
+  // );
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -37,12 +49,20 @@ const Comments = ({ postId }) => {
     setDesc("");
   };
 
+  // const handleDelete = () => {
+  //   deleteMutation.mutate(postId);
+  // };
+
   return (
     <div className="comments">
       <div className="write">
-        <img
-          src={currentUser.profilePicture}
+        {/* <img
+          src={"/upload/" + currentUser.profilePicture}
           alt=""
+        /> */}
+        <img
+          src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+          alt="user"
         />
         <input
           type="text"
@@ -61,7 +81,7 @@ const Comments = ({ postId }) => {
               key={comment.id}
               className="comment">
               <img
-                src={comment.profilePicture}
+                src={"/upload/" + comment.profilePicture}
                 alt=""
               />
               <div className="info">
@@ -71,6 +91,7 @@ const Comments = ({ postId }) => {
               <span className="date">
                 {moment(comment.createdAt).fromNow()}
               </span>
+              {/* <button onClick={handleDelete}>Delete</button> */}
             </div>
           ))}
     </div>

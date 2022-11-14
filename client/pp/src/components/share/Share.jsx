@@ -56,12 +56,16 @@ const Share = () => {
         <div className="top">
           <div className="left">
             <img
-              src={currentUser.profilePicture}
+              src="https://images.unsplash.com/photo-1668355127376-91b48ed7ee7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2795&q=80"
               alt=""
             />
+            {/* <img
+              src={currentUser.profilePicture}
+              alt=""
+            /> */}
             <input
               type="text"
-              placeholder={`What's on your mind ${currentUser.name}?`}
+              placeholder={`What's on your mind  ${currentUser.name}?`}
               onChange={(e) => setDesc(e.target.value)}
               value={desc}
             />

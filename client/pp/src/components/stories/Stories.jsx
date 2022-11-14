@@ -37,12 +37,22 @@ const Stories = () => {
   return (
     <div className="stories">
       <div className="story">
-        <img src={currentUser.profilePicture} alt="" />
+        <img
+          src="https://images.unsplash.com/photo-1668355127376-91b48ed7ee7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2795&q=80"
+          alt=""
+        />
+        {/* <img src={currentUser.profilePicture} alt="" /> */}
         <span> {currentUser.name}</span> <button>+</button>
       </div>
       {stories.map((story) => (
-        <div className="story" key={story.id}>
-          <img src={story.img} alt="" /> <span> {story.name}</span>
+        <div
+          className="story"
+          key={story.id}>
+          <img
+            src={story.img}
+            alt=""
+          />
+          <span> {story.name}</span>
         </div>
       ))}
     </div>
