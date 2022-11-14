@@ -39,7 +39,6 @@ Client side npm packages:
  -- "react-icons"
  -- "react-router-dom"
  -- "react-scripts"
- -- "web-vitals"
 		
   Register form:
 			<img width="1440" alt="register" src="https://user-images.githubusercontent.com/117219185/201744567-6126e5ab-c67c-4f9e-8618-27c5bbe2eda9.png">
