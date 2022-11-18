@@ -7,38 +7,40 @@ frontend side - ReactJS
 backend side - NodeJS, Express
 database - MySQL
 
--- to initialise all packages command npm i
--- servser side command to run npm start
--- client side commant to run npm start
+NPM commands:
+
+- to initialise all packages command npm i
+- servser side command to run npm start
+- client side commant to run npm start
 
 Server side npm packages:
 
--- "bcrypt"
--- "cookie-parser"
--- "cors"
--- "express" 
--- "jsonwebtoken"
--- "mysql"
--- "mysql2"
--- "nodemon"
--- "moment"
+-  "bcrypt"
+-  "cookie-parser"
+-  "cors"
+-  "express" 
+-  "jsonwebtoken"
+-  "mysql"
+-  "mysql2"
+-  "nodemon"
+-  "moment"
     
     
 Client side npm packages:
 
- -- @emotion/react"
- -- "@emotion/styled"
- -- "@mui/icons-material"
- -- "@mui/material"
- -- "@tanstack/react-query"
- -- "axios"
- -- "node-sass"
- -- "moment"
- -- "react"
- -- "react-dom"
- -- "react-icons"
- -- "react-router-dom"
- -- "react-scripts"
+ -  @emotion/react"
+ -  "@emotion/styled"
+ -  "@mui/icons-material"
+ -  "@mui/material"
+ -  "@tanstack/react-query"
+ -  "axios"
+ -  "node-sass"
+ -  "moment"
+ -  "react"
+ -  "react-dom"
+ -  "react-icons"
+ -  "react-router-dom"
+ -  "react-scripts"
 		
   Register form:
 			<img width="1440" alt="register" src="https://user-images.githubusercontent.com/117219185/201744567-6126e5ab-c67c-4f9e-8618-27c5bbe2eda9.png">
