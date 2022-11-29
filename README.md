@@ -9,9 +9,9 @@ database - MySQL
 
 NPM commands:
 
-- to initialise all packages command npm i
-- servser side command to run npm start
-- client side commant to run npm start
+- to initialise all packages command ### `npm i`
+- servser side command to run ### `npm start`
+- client side commant to run ### `npm start`
 
 Server side npm packages:
 
